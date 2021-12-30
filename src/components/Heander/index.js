@@ -1,4 +1,4 @@
-import react from 'react';
+
 import { Content } from './styles'
 import { Container } from './styles'
 
