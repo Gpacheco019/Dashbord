@@ -1,20 +1,40 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 100%
-  height: 450px
-  
-  display: flex;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
-  justify-content: center;      
+export const Container = styled.div`   
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
 
-    img{
-      width: 20rem;
-      height: 35rem;
-      margin: 10px;
-      padding: 20px
+    @media screen and (max-width: 1000px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);   
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .ContentCard{
+      width: 280px;
+      height: 420px;
+      background: var(--background);
+      border: none;
+      border-radius:0.5rem;
+
+      img{
+        width: 100%;
+        height: 100%;
+        border-radius:0.5rem;
+      }
+
+      h3{
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+
+      }
+    };
+
     
-  }
 `;
