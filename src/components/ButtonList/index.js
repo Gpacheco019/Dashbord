@@ -6,7 +6,7 @@ import Button from '../Button'
 
 export default function ButtonList(){
 
-  const classArmor = ['Bronze', 'prata', 'Ouro', 'Sapuris'];
+  const classArmor = ['Bronze', 'Prata', 'Ouro', 'Sapuris'];
   return(
     <Container>
       {classArmor.map(name => {
