@@ -1,33 +1,37 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import Aiolia from '../../assets/gold/aiolia_leao.jpg';
-import Dohko from '../../assets/gold/dohko_libra.jpg';
+import { api } from '../../services/api';
 
 import { Container } from './styles';
+import Card from '../Card';
 
 export default function CardList(){
+
+  const [viewCarvaleiro, setViewCavaleiro] = useState([]);
+
+   useEffect(() => {    
+    api
+      .get('/Cavaleiros')
+      .then((response) => setViewCavaleiro(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  },[]);
+  
+  const returnCavaleiros = [...viewCarvaleiro]; 
+
   return(
     <Container>
-        <div className="ContentCard">
-          <img src={Aiolia} alt="" />
-          <h3>oi</h3>
-        </div> 
-        <div className="ContentCard">
-          <img src={Dohko} alt="" />
-          <h3>oi</h3>
-        </div>
-        <div className="ContentCard">
-          <h3>oi</h3>
-        </div>
-        <div className="ContentCard">
-          <h3>oi</h3>
-        </div>
-        <div className="ContentCard">
-          <h3>oi</h3>
-        </div>       
-        {/* <img src={Aiolia} alt="" /> 
-        <img src={Aiolia} alt="" />  
-        <img src={Aiolia} alt="" />      
-        <img src={Aiolia} alt="" />           */}
+      {returnCavaleiros.map(e => {
+        return(
+          
+          <Card 
+            key={e.id}
+            srcImg={e.src}
+            nameCavaleiro={e?.Nome}
+          />      
+        )
+      })}
     </Container>
   );
 }

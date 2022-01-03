@@ -22,6 +22,8 @@ export const Container = styled.div`
       border: none;
       border-radius:0.5rem;
 
+      cursor: pointer;
+
       img{
         width: 100%;
         height: 100%;
