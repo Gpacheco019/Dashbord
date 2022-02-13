@@ -3,12 +3,16 @@ import Dashboard from './components/Dashboard';
 import Header from './components/Heander';
 import { GlobalStyle } from './styles/global'
 
+import {CavaleirosProvaider} from './context/cavaleiros'
+
 function App() {
   return (
     <>
-      <Header />
-      <Dashboard></Dashboard>
-      <GlobalStyle />
+      <CavaleirosProvaider>
+        <Header />
+        <Dashboard></Dashboard>
+        <GlobalStyle />
+      </CavaleirosProvaider>
     </>
   );
 }

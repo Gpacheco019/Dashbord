@@ -1,12 +1,11 @@
-import {useState, useEffect} from 'react';
-import Aiolia from '../../assets/gold/aiolia_leao.jpg';
+import {useState, useEffect, useContext} from 'react';
 import { api } from '../../services/api';
 
 import { Container } from './styles';
 import Card from '../Card';
 
 export default function CardList(){
-
+  
   const [viewCarvaleiro, setViewCavaleiro] = useState([]);
 
    useEffect(() => {    
@@ -25,10 +24,11 @@ export default function CardList(){
       {returnCavaleiros.map(e => {
         return(
           
-          <Card 
+          <Card            
             key={e.id}
             srcImg={e.src}
             nameCavaleiro={e?.Nome}
+            cavaleiro={e.returnCavaleiros}
           />      
         )
       })}
