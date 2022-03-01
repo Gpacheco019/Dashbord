@@ -3,10 +3,10 @@ import { Container } from './styles';
 
 import {cavaleiros} from '../../context/cavaleiros'
 
-export default function Card({srcImg, nameCavaleiro, cavaleiro}){  
+export default function Card({srcImg, nameCavaleiro}){  
 
-  const {handleSelectCavaleiros, selectCavaleiros } = useContext(cavaleiros)
-  console.log('eee', selectCavaleiros)
+  const {handleSelectCavaleiros, selectCavaleiros } = useContext(cavaleiros) 
+
   return(
     <Container >
       <img onClick={handleSelectCavaleiros} src={srcImg} alt={nameCavaleiro}/>
