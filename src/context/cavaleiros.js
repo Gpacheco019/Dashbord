@@ -5,21 +5,24 @@ const cavaleiros = createContext()
 
 function CavaleirosProvaider({children}){
 
-  const [selectCavaleiros, setSelectCavaleiros] = useState({})
+  const [selectCavaleiros, setSelectCavaleiros] = useState([])
   const [allCavaleiros, setAllCavaleiros] = useState([])
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function handleSelectCavaleiros(event){
     event.preventDefault()
-    const nameKnight =  event.currentTarget.alt
-    const selectCavaleiros =  allCavaleiros.find(cavaleiro => cavaleiro.Nome === nameKnight)
+    const nameKnight =  event.currentTarget.alt   
+    const selectCavaleiro =  allCavaleiros.find(cavaleiro => cavaleiro.name === nameKnight)
     setIsOpen(true)
-    setSelectCavaleiros( selectCavaleiros)
+    setSelectCavaleiros((prevState) => [...prevState, {...selectCavaleiro}])
+    // setSelectCavaleiros((prevState) => [...prevState, {...selectCavaleiro, ...selectCavaleiro.age = 2}])
+
 
   }
 
   function closeModal() {
     setIsOpen(false);
+    setSelectCavaleiros([])
   }
 
 

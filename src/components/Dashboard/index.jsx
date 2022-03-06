@@ -1,23 +1,24 @@
 import { useContext } from 'react';
 import ButtonList from '../ButtonList';
 import CardList from '../CardList';
-import {Container} from './styles'
-import ModalComponent from '../Modal'
+import ModalComponent from '../Modal';
+import ContentModal from '../ContentModal';
+import {Container} from './styles';
 import {cavaleiros} from '../../context/cavaleiros'
 
 export default function Dashboard() {
-  const {allCavaleiros, modalIsOpen, closeModal, selectCavaleiros} = useContext(cavaleiros)  
-    console.log('qual Knight', selectCavaleiros)
+  const { modalIsOpen, closeModal, selectCavaleiros} = useContext(cavaleiros)  
+    
     return (
         <Container>
             <ButtonList />
             <CardList />
             <ModalComponent
               modalIsOpen={modalIsOpen}
-              closeModal={closeModal}   
+              closeModal={closeModal}  
             >
-                {selectCavaleiros ? (
-                   <h1>{selectCavaleiros.Nome}</h1>
+                {selectCavaleiros ? (                   
+                    <ContentModal />            
                 ):(
                     null
                 )}

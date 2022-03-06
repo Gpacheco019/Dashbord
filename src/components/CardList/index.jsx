@@ -19,7 +19,7 @@ export default function CardList(){
           <Card            
             key={e.id}
             srcImg={e.src}
-            nameCavaleiro={e?.Nome}
+            nameCavaleiro={e?.name}
             cavaleiro={allCavaleiros}
           />      
         )

@@ -2,17 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.div`   
     display: grid;
-    grid-template-columns: repeat(4, 1fr);   
+    grid-template-columns: repeat(auto-fill, 300px) ;   
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
     padding: 2rem;
 
     @media screen and (max-width: 1000px) {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);   
+      grid-template-columns: repeat(auto-fill, 300px);  
       justify-content: center;
-      gap: 1rem;
+      gap: 2rem;
     }
 
     .ContentCard{
